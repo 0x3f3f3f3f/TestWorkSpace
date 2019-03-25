@@ -1,7 +1,10 @@
-﻿#define Res float2(_MainTex_TexelSize.zw)
+﻿#ifndef NotebookDrawing
+#define NotebookDrawing
+
+#define Res float2(_MainTex_TexelSize.zw)
 #define Res1 float2(_NoiseTex_TexelSize.zw)
 
-#define AngleNum 3
+#define AngleNum 16
 #define SampNum 16
 #define PI2 6.28318530717959
 
@@ -42,7 +45,7 @@ float2 getGrad(float2 pos, float eps,SamplerState sampler_MainTex)
 		) / eps / 2.;
 }
 
-void Convolution_float(float2 pos, SamplerState sampler_MainTex,SamplerState sampler_NoiseTex, out float3 color1, out float3 color2) 
+void Convolution_float(float2 pos, out float3 color1, out float3 color2) 
 {
 	float3 col = float3(0,0,0);
 	float3 col2 = float3(0,0,0);
@@ -86,3 +89,11 @@ void Convolution_float(float2 pos, SamplerState sampler_MainTex,SamplerState sam
 	color1 = col;
 	color2 = col2;
 }
+
+void Grid_float(float2 pos,float3 inkaro,out float3 karo) 
+{
+	float2 s = sin(pos.xy*.1 / sqrt(Res.y / 400.));
+	karo = inkaro - .5*float3(.25, .1, .1)*dot(exp(-s*s*80.), float2(1, 1));
+}
+
+#endif //NotebookDrawing
