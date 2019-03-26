@@ -33,6 +33,11 @@ LightmapSnapshot.asset filter=lfs diff=lfs merge=unityyamlmerge -text
 *.[Pp][Ii][Cc][Tt] filter=lfs diff=lfs merge=lfs -text
 *.[Aa][Ii] filter=lfs diff=lfs merge=lfs -text
 *.[Hh][Dd][Rr] filter=lfs diff=lfs merge=lfs -text
+*.[Tt][Ee][Rr] filter=lfs diff=lfs merge=lfs -text
+*.[Hh][Ff][Zz] filter=lfs diff=lfs merge=lfs -text
+*.[Rr][Aa][Ww]* filter=lfs diff=lfs merge=lfs -text
+*.[Rr]16 filter=lfs diff=lfs merge=lfs -text
+*.[Rr]32 filter=lfs diff=lfs merge=lfs -text
 
 ## Font
 *.[Oo][Tt][Ff] filter=lfs diff=lfs merge=lfs -text
